@@ -19,8 +19,9 @@
 
 {Make a list of websites that you found helpful in this project}
 
-- [fssnip used as a guide to make hangman]([http://url.link.goes.here](https://www.fssnip.net/mO/title/Hangman))
-- [Kotlinlang used to learn about Kotlin]([http://url.link.goes.here](https://kotlinlang.org/docs/getting-started.html))
+- [fssnip used as a guide to make hangman] ((https://www.fssnip.net/mO/title/Hangman))
+
+- [Kotlinlang used to learn about Kotlin]((https://kotlinlang.org/docs/getting-started.html))
 
 # Future Work
 
