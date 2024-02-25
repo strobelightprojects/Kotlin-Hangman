@@ -1,15 +1,21 @@
 import java.util.Random
 
+// Immutable list of words 
+val words = listOf("germany", "icecream", "food", "steak", "pizza")
+// Choose a random word 
+val chosenWord = words.random()
+
+// Mutable to store guessed letters
+var guessedLetters = mutableSetOf<Char>()
+// count wrong guesses
+var wrongGuesses = 0
+
+// start point
 fun main() {
-    val words = listOf("apple", "banana", "orange", "computer", "python")
-    val chosenWord = words.random()
-
-    var guessedLetters = mutableSetOf<Char>()
-    var wrongGuesses = 0
-
     println("Welcome to Hangman!")
     println("Guess the word letter by letter.")
 
+    // Game loop
     while (wrongGuesses < 6 && !isWordGuessed(chosenWord, guessedLetters)) {
         displayHangman(wrongGuesses)
         displayWord(chosenWord, guessedLetters)
@@ -28,6 +34,7 @@ fun main() {
         }
     }
 
+    //print result
     if (isWordGuessed(chosenWord, guessedLetters)) {
         println("Congratulations! You guessed the word: $chosenWord")
     } else {
@@ -36,10 +43,12 @@ fun main() {
     }
 }
 
+//  check if the word is guessed
 fun isWordGuessed(word: String, guessedLetters: Set<Char>): Boolean {
     return word.all { it in guessedLetters }
 }
 
+//  display the hangman based on missed guesses
 fun displayHangman(wrongGuesses: Int) {
     val stages = listOf(
       """
@@ -63,45 +72,37 @@ fun displayHangman(wrongGuesses: Int) {
           |     /
           |     
       """,
-     
-  
-        """
-            --------
-            |      |
-            |      0
-            |     /|
-            |
-        """,
       """
           --------
           |      |
-          |      0
+          |      O
           |     /|\
           |
       """,
       """
           --------
           |      |
-          |      0
+          |      O
           |     /|\
           |     /
       """,
-
-        """
-            --------
-            |      |
-            |      0
-            |     /|\
-            |     / \
-        """,
+      """
+          --------
+          |      |
+          |      O
+          |     /|\
+          |     / \
+      """
     )
 
     println(stages[wrongGuesses])
 }
 
+//  display the word with guessed letters
 fun displayWord(word: String, guessedLetters: Set<Char>) {
     val displayedWord = word.map { char ->
         if (char in guessedLetters) char else '-'
     }.joinToString("")
     println(displayedWord)
 }
+
