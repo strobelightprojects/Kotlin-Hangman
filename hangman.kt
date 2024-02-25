@@ -2,13 +2,11 @@ import java.util.Random
 
 // Immutable list of words 
 val words = listOf("germany", "icecream", "food", "steak", "pizza")
-
 // Choose a random word 
 val chosenWord = words.random()
 
 // Mutable to store guessed letters
 var guessedLetters = mutableSetOf<Char>()
-
 // count wrong guesses
 var wrongGuesses = 0
 
@@ -74,6 +72,13 @@ fun displayHangman(wrongGuesses: Int) {
           |     /
           |     
       """,
+       """
+           --------
+           |      |
+           |      O
+           |     /|
+           |
+       """,
       """
           --------
           |      |
@@ -107,4 +112,3 @@ fun displayWord(word: String, guessedLetters: Set<Char>) {
     }.joinToString("")
     println(displayedWord)
 }
-
