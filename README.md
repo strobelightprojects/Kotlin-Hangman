@@ -11,9 +11,7 @@
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+* *Git/Github *Css 3 *HTMl 5 *JavaScript *JQuerey 1.12.4.min - Library for JavaScript
 
 # Useful Websites
 
